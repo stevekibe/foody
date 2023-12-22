@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FoodService } from '../services/food/food.service';
 import { Food } from '../shared/models/food';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,9 +11,17 @@ export class HomeComponent {
 
   foods:Food[] = [];
   
-  constructor(private foodservice:FoodService){}
+  constructor(private foodservice:FoodService, private route:ActivatedRoute){}
  
   ngOnInit(): void{
-    this.foods = this.foodservice.getAll();
+
+    this.route.params.subscribe(params =>{
+      if(params['searchTerm'])
+        this.foods = this.foodservice.getAll().filter(food =>
+          food.name.toLowerCase().includes(params['searchTerm'].toLowerCase()));
+      
+      else
+        this.foods = this.foodservice.getAll();
+    })
   }
 }
