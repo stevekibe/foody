@@ -8,7 +8,8 @@ import { Food } from '../shared/models/food';
 })
 export class HomeComponent {
 
-  foods:Food[] = [];
+  foods:String[] = [];
+  
   constructor(private foodservice:FoodService){}
  
   ngOnInit(): void{
