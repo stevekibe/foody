@@ -8,7 +8,7 @@ import { Food } from '../shared/models/food';
 })
 export class HomeComponent {
 
-  foods:String[] = [];
+  foods:Food[] = [];
   
   constructor(private foodservice:FoodService){}
  
