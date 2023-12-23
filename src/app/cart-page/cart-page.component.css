@@ -123,3 +123,18 @@ ul .remove-button:hover{
 	justify-content: center;
 	display: flex;
 }
+
+.checkout1{
+    color: white;
+    background: #e72929;
+    border: none;
+    font-size: 1rem;
+    padding: .8rem;
+    border-radius: 10rem;
+    outline: none;
+}
+
+.checkout1:hover{
+    opacity: .9;
+    cursor: pointer;
+}
