@@ -13,11 +13,8 @@ export class CartPageComponent {
 
   cart!:Cart;
 
-  constructor(private cartService: CartService, private foodservice:FoodService) {
-    let foods = foodservice.getAll();
-    cartService.addToCart(foods[1]);
-    cartService.addToCart(foods[2]); 
-    cartService.addToCart(foods[3]);  
+  constructor(private cartService: CartService) {
+   
     this.setCart();
   }
 
